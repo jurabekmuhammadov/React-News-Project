@@ -1,0 +1,92 @@
+.card {
+  width: 100%;
+  position: relative;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px 2px rgb(191, 191, 191);
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .author {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .date {
+      font-size: 14px;
+    }
+  }
+  .image {
+    height: 150px !important;
+    overflow: hidden;
+    border-radius: 10px !important;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 10px !important;
+      object-fit: cover;
+    }
+  }
+  .title {
+    margin-bottom: 30px;
+    h2 {
+      font-size: 22px;
+    }
+  }
+  .bottom {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    .cta {
+      border: none;
+      background: none;
+    }
+    .cta span {
+      padding-bottom: 7px;
+      letter-spacing: 2px;
+      font-size: 14px;
+      padding-right: 15px;
+      text-transform: uppercase;
+      color: black;
+    }
+    .cta svg {
+      transform: translateX(-8px);
+      transition: all 0.3s ease;
+    }
+    .cta:hover svg {
+      transform: translateX(0);
+    }
+    .cta:active svg {
+      transform: scale(0.9);
+    }
+    .hover-underline-animation {
+      position: relative;
+      color: #109be9;
+      padding-bottom: 20px;
+    }
+    .hover-underline-animation:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #109be9;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .cta:hover .hover-underline-animation:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
